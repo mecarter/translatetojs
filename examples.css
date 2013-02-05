@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+
+html, body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: #e2a114;
+	box-shadow: inset 0 0 400px rgba(0,0,0,0.2);
+	color: #303030;
+	font-size: 100%;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1;
+}
+
+h1,
+h2 {
+	margin: 0 0 0.8em;
+	text-shadow: 1px 1px 0 #fbc861;
+}
+
+h1 {
+	font-size: 4em;
+	font-family: 'Fjalla One', Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	margin-bottom: 2em;
+	font-size: 1.5em;
+}
+
+h3 {
+	color: #fff;
+	font-size: 1.2em;
+}
+
+#wrapper {
+	margin: 0 auto;
+	padding: 80px 40px;
+	max-width: 800px;
+}
+
+/* SLIDESHOW example */
+.slideshow {
+	position: relative;
+	overflow: hidden;
+	margin: 0 0 40px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #aa772f #fbc861 #fbc861 #aa772f;
+}
+
+.slide-nav {
+	position: absolute;
+	top: 40%;
+	left: 10px;
+	z-index: 99;
+	display: block;
+	padding: 0 18px 10px;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #fff;
+	font-size: 4em;
+	opacity: 0.1;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.slide-nav:hover {
+	opacity: 1;
+}
+
+.slide-nav.next {
+	right: 10px;
+	left: auto;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.slide img {
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}

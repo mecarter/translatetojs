@@ -3,42 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>translateTo.js - Examples</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     
-    <style type="text/css">
-      #example-1 {
-        width: 50%;
-        height: 50%;
-        position: absolute;
-        top: 25%;
-        left: 25%;
-        background: #f80;
-      }
-    </style>
+    <link rel="stylesheet" href="examples.css">
   </head>
   <body>
+  
+    <div id="wrapper">
+      <h1>translateTo.js</h1>
+      <h2>A simple jQuery plugin for hardware-accelerated CSS transforms with graceful .animate() fallbacks</h2>
 
-    <div id="example-1">
-    
+      <h3>1. Build a simple responsive slideshow:</h3>
+      <div id="example-1" class="slideshow">
+        <a href="#" class="slide-nav prev">&lt;</a>
+        <a href="#" class="slide-nav next">&gt;</a>
+        <div class="slide current">
+          <img src="//lorempixel.com/800/400/abstract/1" />
+        </div>
+        <div class="slide">
+          <img src="//lorempixel.com/800/400/abstract/2" />
+        </div>
+        <div class="slide">
+          <img src="//lorempixel.com/800/400/abstract/3" />
+        </div>
+      </div>
     </div>
-    
-    <a href="#" class="translator">Translate this thing</a>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="build/translateTo.js"></script>
-    <script>
-      $(function() {
-        $('a.translator').click(function() {
-          $('#example-1')
-            .translateTo(
-              Math.floor(Math.random() * 400) - 200, 
-              Math.floor(Math.random() * 400) - 200, 
-              1000
-            );
-        });
-      });
-    </script>
+    <script src="examples.js"></script>
   </body>
 </html>
