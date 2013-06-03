@@ -24,15 +24,13 @@
   
   TranslateTo.prototype = {
     init: function () { 
-      // define $elem
+      // define the vars
       var $elem = $(this.element),
           has3d = this.has3d(),
           isFixed = $elem.css('position') === 'fixed',
           x = this.options.x,
           y = this.options.y,
           duration = this.options.duration;
-          
-      console.log($elem.css('position'));
       
       // add og-coords data first time an element is translated
       if (!has3d && !$elem.data('og-coords')) {
