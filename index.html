@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>translateTo.js - Examples</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css">
+    <link rel="stylesheet" href="examples.css">
+  </head>
+  <body>
+  
+    <div id="wrapper">
+      <h1>translateTo.js</h1>
+      <h2>A simple jQuery plugin for hardware-accelerated CSS transforms with graceful .animate() fallbacks</h2>
+      
+      <h3>Usage:</h3>
+      <pre>$(element).translateTo(x, y, duration);</pre>
+      
+      <h3>Defaults (duration is always in <em>ms</em>):</h3>
+      <pre>x: 0,<br/>y: 0,<br/>duration: 300</pre>
+      
+      <h3>Callback:</h3>
+      <pre>.on('animationEnd');</pre>
+      
+      <h3>Move stuff around:</h3>
+      <pre>$('#stage1 .box').on('click', function() {<br/>  $(this).translateTo(421, 156, 2666);<br/>});</pre>
+      <div class="stage" id="stage1">
+        <div class="box">Move me!</div>
+      </div>
+      
+      <h3>Do something when it's done animating:</h3>
+      <pre>$('#stage2 .box')<br/>  .on('click', function() {<br/>    $(this).translateTo(-666, 202, 1420);<br/>  })<br/>  .on('animationEnd', function() {<br/>    $(this).text('Thanks!');</br/>  });</pre>
+      <div class="stage" id="stage2">
+        <div class="box">No, move me!</div>
+      </div>
+      
+      <h3>Some notes:</h3>
+      <ul>
+        <li>Support for <pre>position: fixed</pre> elements is a little dodgy. Plays best with <pre>position: absolute</pre> or <pre>position: static</pre> elements.</li>
+        <li>Go crazy!</li>
+      </ul>
+      
+      <h3 class="last">Tweet me <a href="http://www.twitter.com/markecarter">@markecarter</a> if you have any questions or suggestions!</h3>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="build/translateTo.js"></script>
+    <script src="examples.js"></script>
+  </body>
+</html>

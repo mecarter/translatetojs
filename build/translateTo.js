@@ -6,7 +6,7 @@
 
 ;(function ($, window, document, undefined) {
 
-  var pluginName = 'translateTo';
+  var translateTo = 'translateTo';
   var defaults = {
       x: 0,
       y: 0,
@@ -18,7 +18,7 @@
     this.element = element;
     this.options = $.extend({}, defaults, options);
     this._defaults = defaults;
-    this._name = pluginName;
+    this._name = translateTo;
     this.init();
   }
   
@@ -27,15 +27,18 @@
       // define $elem
       var $elem = $(this.element),
           has3d = this.has3d(),
+          isFixed = $elem.css('position') === 'fixed',
           x = this.options.x,
           y = this.options.y,
           duration = this.options.duration;
+          
+      console.log($elem.css('position'));
       
       // add og-coords data first time an element is translated
       if (!has3d && !$elem.data('og-coords')) {
         // make the element moveable
         $elem
-          .css('position', 'absolute')
+          .css('position', isFixed ? 'fixed' : 'absolute')
             .parent()
             .css('position', 'relative');
         
@@ -102,7 +105,7 @@
     }
   };
   
-  $.fn[pluginName] = function (x, y, duration) {
+  $.fn[translateTo] = function (x, y, duration) {
     var options = {
       x: x, 
       y: y, 
