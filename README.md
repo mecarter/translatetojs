@@ -3,6 +3,8 @@ translateTo.js
 
 A simple jQuery plugin for hardware-accelerated CSS transforms with graceful .animate() fallbacks
 
+Now with Modernizr support! (Modernizr.css3dtransforms)
+
 ### Usage:
 
     $(element).translateTo(x, y, duration);
