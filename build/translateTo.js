@@ -75,31 +75,36 @@
       }
     },
     has3d: function () {
-      // has3d check by Lorenzo Polidori (https://gist.github.com/3794226)
-      // does this browser support 3d translation?
-      var el = document.createElement('p'), 
-          check3d,
-          transforms = {
-            'WebkitTransform':'-webkit-transform',
-            'OTransform':'-o-transform',
-            'MSTransform':'-ms-transform',
-            'MozTransform':'-moz-transform',
-            'Transform':'transform'
-          };
-      
-      // Add it to the body to get the computed style.
-      document.body.insertBefore(el, null);
-      
-      for (var t in transforms) {
-        if (el.style[t] !== undefined) {
-          el.style[t] = 'translate3d(1px,1px,1px)';
-          check3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+
+      if (typeof Modernizr !== 'undefined' && Modernizr.css3dtransforms) {
+        return true;
+      } else {
+        // has3d check by Lorenzo Polidori (https://gist.github.com/3794226)
+        // does this browser support 3d translation?
+        var el = document.createElement('p'), 
+            check3d,
+            transforms = {
+              'WebkitTransform':'-webkit-transform',
+              'OTransform':'-o-transform',
+              'msTransform':'-ms-transform',
+              'MozTransform':'-moz-transform',
+              'Transform':'transform'
+            };
+        
+        // Add it to the body to get the computed style.
+        document.body.insertBefore(el, null);
+        
+        for (var t in transforms) {
+          if (el.style[t] !== undefined) {
+            el.style[t] = 'translate3d(1px,1px,1px)';
+            check3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
+          }
         }
+        
+        document.body.removeChild(el);
+        
+        return check3d !== undefined && check3d.length > 0 && check3d !== 'none';
       }
-      
-      document.body.removeChild(el);
-      
-      return check3d !== undefined && check3d.length > 0 && check3d !== 'none';
     }
   };
   
