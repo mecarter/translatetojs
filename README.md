@@ -1,7 +1,7 @@
 translateTo.js
 ==============
 
-A simple jQuery plugin for hardware-accelerated CSS transforms with graceful .animate() fallbacks
+A simple jQuery/Zepto plugin for hardware-accelerated CSS transforms with graceful .animate() fallbacks
 
 Now with Modernizr support! (Modernizr.css3dtransforms)
 
