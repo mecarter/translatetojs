@@ -119,4 +119,4 @@
       new TranslateTo(this, options);
     });
   };
-})('__proto__' in {} ? Zepto : jQuery, window, document);
+})(jQuery, window, document);
